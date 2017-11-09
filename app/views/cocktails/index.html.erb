@@ -1,0 +1,15 @@
+<h2>Welcome to Mister Cocktail</h2>
+
+
+
+<%= link_to "Create a new Cocktail", new_cocktail_path, class: "btn btn-success" %>
+
+<ul>
+  <% @cocktails.each do |cocktail| %>
+  <li>
+    <%= cocktail.name %>
+    <%= link_to 'Show details', cocktail_path(cocktail), class: "btn btn-primary" %>
+    <%= link_to 'Delete', cocktail_path(cocktail), class: "btn btn-danger", method: :delete %>
+  </li>
+  <% end %>
+</ul>
