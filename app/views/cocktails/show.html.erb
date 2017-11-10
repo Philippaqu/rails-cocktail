@@ -1,14 +1,20 @@
+<%= render 'layouts/card' %>
+
+
 <h2><%= @cocktail.name %></h2>
 <h3>List of ingredients:</h3>
 <ul>
   <% @cocktail.doses.each do |dose| %>
   <li><%=
     dose.description %> of <%= dose.ingredient.name %>
-      <%= link_to "Remove this dose", dose_path(id: dose.id), method: :delete %>
-    </li>
+    <%= link_to "Remove this dose", dose_path(id: dose.id), method: :delete %>
+    <% if @cocktail.photo? %>
+    <%= cl_image_tag @cocktail.photo.path, width: 200, height: 300, crop: :fill %>
     <% end %>
-  </ul>
+  </li>
+  <% end %>
+</ul>
 
 
-  <%= link_to "Add dose", new_cocktail_dose_path(@cocktail) , class: "btn btn-success" %>
-  <%= link_to 'Back', cocktails_path, class: "btn btn-primary" %>
+<%= link_to "Add dose", new_cocktail_dose_path(@cocktail) , class: "btn btn-success" %>
+<%= link_to 'Back', cocktails_path, class: "btn btn-primary" %>

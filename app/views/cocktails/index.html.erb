@@ -1,24 +1,29 @@
 
 
 
-  <div class="banner">
+
+<div class="banner">
   <div class="banner-content" style="background-image: linear-gradient(-100deg, rgba(200,245,255,0.4) 0%, rgba(200,125,155,0.3) 0%), url('<%= image_path 'bar.jpg'%>');">
-      <div id="header"><h2>Welcome to Mister Cocktail</h2></div>
-    </div>
+    <div id="header"><h2>Welcome to Mister Cocktail</h2></div>
   </div>
+</div>
 
 
 
 
 
-  <%= link_to "Create a new Cocktail", new_cocktail_path, class: "btn btn-success" %>
+<%= link_to "Create a new Cocktail", new_cocktail_path, class: "btn btn-success" %>
+<%= render "layouts/card" %>
 
-  <ul>
-    <% @cocktails.each do |cocktail| %>
-    <li>
-      <%= cocktail.name %>
-      <%= link_to 'Show details', cocktail_path(cocktail), class: "btn btn-primary" %>
-      <%= link_to 'Delete', cocktail_path(cocktail), class: "btn btn-danger", method: :delete %>
-    </li>
-    <% end %>
-  </ul>
+<ul>
+  <% @cocktails.each do |cocktail| %>
+  <li>
+    <%= cocktail.name %>
+    <%= link_to 'Show details', cocktail_path(cocktail), class: "btn btn-primary" %>
+    <%= link_to 'Delete', cocktail_path(cocktail), class: "btn btn-danger", method: :delete %>
+  </li>
+  <% end %>
+</ul>
+
+
+

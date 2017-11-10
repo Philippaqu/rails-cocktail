@@ -24,4 +24,3 @@ drinks_seperate.each do |ingredient|
   Ingredient.create!(name: i)
 end
 
-

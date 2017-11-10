@@ -1,0 +1,44 @@
+.card {
+  background-color: white;
+  height: 250px;
+  width: 250px;
+  border-radius: 4px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+
+}
+
+.card-head {
+  background-color: red;
+  height: 180px;
+  width: 240px;
+  margin: 4px;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  padding-top: 10px;
+}
+
+.card-footer {
+  background-color: green;
+  width: 240px;
+  height: 55px;
+  margin: 4px;
+  color: black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+.ingredients {
+  background-color: black;
+  height: 50px;
+  width: 100px
+}
+
+.actions {
+  background-color: black;
+  height: 50px;
+  width: 100px;
+}
