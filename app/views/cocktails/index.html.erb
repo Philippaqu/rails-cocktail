@@ -14,11 +14,16 @@
 <!-- Grid -->
 <div class="container">
   <div class="row">
+    <div class="col-sm-3">
     <% @cocktails.each do |cocktail| %>
+    <% if cocktail.photo == nil %>
+    <% photo_url = 'drink.jpg' %>
+    <% else %>
+    <% photo_url = cl_image_path cocktail.photo.path, height: 180, width: 240, crop: :fill %>
+    <% end %>
     <%= link_to(cocktail_path(id: cocktail.id)) do %>
-    <div class="col-xs-12 col-sm-6">
      <div class="card">
-       <div class="card-head" style="background-image: url('<%= image_path 'bar.jpg' %>')">
+       <div class="card-head" style="background-image: url(<%= image_path photo_url %>)">
          <%= cocktail.name %>
        </div>
        <div class="card-footer">
@@ -30,9 +35,9 @@
          </div>
        </div>
      </div>
-   </div>
    <% end %>
    <% end %>
+ </div>
  </div>
 </div>
 
