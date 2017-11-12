@@ -1,19 +1,32 @@
 
 
+
 <h2><%= @cocktail.name %></h2>
-<h3>List of ingredients:</h3>
-<ul>
-  <% @cocktail.doses.each do |dose| %>
-  <li><%=
-    dose.description %> of <%= dose.ingredient.name %>
-    <%= link_to "Remove this dose", dose_path(id: dose.id), method: :delete %>
-    <% if @cocktail.photo? %>
-    <%= cl_image_tag @cocktail.photo.path, width: 200, height: 300, crop: :fill %>
-    <% end %>
-  </li>
+
+<div class="container">
+  <% if @cocktail.photo == nil %>
+  <% photo_url = 'drink.jpg' %>
+  <% else %>
+  <% photo_url = cl_image_path @cocktail.photo.path, height: 180, width: 240, crop: :fill %>
   <% end %>
-</ul>
+  <img src="<%= image_path photo_url %>" alt="Picture" class="picture-show">
+
+    <h3>List of ingredients:</h3>
+    <ul>
+      <% @cocktail.doses.each do |dose| %>
+      <li><%=
+        dose.description %> of <%= dose.ingredient.name %>
+        <%= link_to "Remove this dose", dose_path(id: dose.id), method: :delete %>
+      </li>
+      <% end %>
+    </ul>
+    <%= link_to "Add dose", new_cocktail_dose_path(@cocktail) , class: "btn btn-success" %>
+    <%= link_to 'Back', cocktails_path, class: "btn btn-primary" %>
+  </div>
+</div>
 
 
-<%= link_to "Add dose", new_cocktail_dose_path(@cocktail) , class: "btn btn-success" %>
-<%= link_to 'Back', cocktails_path, class: "btn btn-primary" %>
+
+
+
+

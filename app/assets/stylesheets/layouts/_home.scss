@@ -4,6 +4,10 @@
   text-align: center;
 }
 
+.banner {
+  margin-bottom: 20px;
+}
+
 h2 {
   font-size: 70px;
   font-weight: 600px;
@@ -23,5 +27,20 @@ h2 {
   align-items: center;
 }
 
+.ingredients {
+  color: black;
+}
+
+.delete {
+  background-color: #ffadb5;
+  height: 20px;
+  width: 70px;
+  color: green;
+  font-weight: bolder;
+  font-size: 10px;
+  text-align: center;
+  margin: auto;
+  border-radius: 4px;
+}
 
 
