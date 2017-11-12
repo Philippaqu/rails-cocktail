@@ -32,7 +32,8 @@
            <p>#<%= @cocktails.find(cocktail.id).ingredients.count %></p>
          </div>
          <div class="actions">
-          <p class="delete"> <%= link_to 'Delete', cocktail_path(cocktail), method: :delete %> </p>
+          <%= link_to 'Delete', cocktail_path(cocktail), method: :delete, class: "btn btn-danger btn-sm" %>
+          <%= link_to 'Edit', cocktail_path(cocktail), class: "btn btn-base btn-sm" %>
          </div>
        </div>
      </div>
